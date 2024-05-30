@@ -1,0 +1,249 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Open Sans", sans-serif;
+}
+
+input {
+  border: 1px solid rgb(212, 210, 210);
+  outline: none;
+  height: 40px;
+  border-radius: 4px;
+  padding: 8px;
+  width: 100%;
+}
+.select-assignees {
+}
+label {
+  font-size: 14px;
+  font-weight: 500;
+}
+.form-field {
+  margin-bottom: 8px;
+}
+.radio-field {
+  display: flex;
+}
+.form-field-radio {
+  display: flex;
+  align-items: center;
+  margin-right: 24px;
+}
+.form-field-radio input {
+  height: 16px;
+  margin-right: 8px;
+}
+.radio-title {
+  font-weight: 600;
+  margin-bottom: 8px;
+  margin-top: 12px;
+}
+.nav {
+  background-color: white;
+  border-bottom: 1px solid rgb(238, 232, 232);
+}
+.nav ul {
+  display: flex;
+  list-style-type: none;
+  gap: 24px;
+}
+.nav li {
+  font-size: 16px;
+  font-weight: 500;
+}
+.nav-container {
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  padding: 16px 36px;
+}
+.nav-container a {
+  text-decoration: none;
+  color: black;
+}
+.register-container {
+  background-color: rgb(246, 243, 248);
+  width: 320px;
+  padding: 20px;
+  margin: 80px auto;
+  border-radius: 12px;
+}
+.addTask-container {
+  margin: 20px auto;
+  width: fit-content;
+}
+.register-container h2 {
+  margin-bottom: 16px;
+}
+.error-msg {
+  color: red;
+  font-size: 14px;
+  font-weight: 500;
+}
+.form-btn {
+  margin: 20px 0;
+  background-color:  #0D6EFF;
+  color: white;
+}
+.body {
+  background-color: rgb(246, 243, 248);
+  min-height: 100vh;
+}
+.body-container {
+  padding: 36px;
+}
+.body-container-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.body-container-header button {
+  border: none;
+  outline: none;
+  background-color: blueviolet;
+  padding: 12px 24px;
+  color: white;
+  font-weight: 600;
+  border-radius: 4px;
+}
+.task-card {
+  padding: 12px 24px;
+  background-color: white;
+  border-radius: 8px;
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+.card-title {
+  font-size: 14px;
+  font-weight: 500;
+  color: gray;
+  margin-bottom: 6px;
+}
+.card-content {
+  font-size: 16px;
+  font-weight: 500;
+}
+.action-icons {
+  display: flex;
+  gap: 12px;
+}
+.profile-form {
+  width: 320px;
+  padding:2em;
+  margin: 5em auto;
+  background-color:ghostwhite;
+  border: solid 2px green;
+  border-radius: 6px;
+}
+
+.profile-form-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.profile-secondaryBtn {
+  border: none;
+  outline: none;
+  font-size: 14px;
+  font-weight: 600;
+}
+.account-container {
+  padding: 36px;
+  display: flex;
+  gap: 200px;
+}
+.end{
+  margin: 10px;
+  padding: 10px;
+  background-color: red;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+.start{
+  margin: 10px;
+  padding: 10px;
+  background-color: blue;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+.stopwatch-container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+ 
+}
+/* index.css */
+.form-field img{
+  border-radius: 100px;
+margin: 0.5rem 3.6rem;
+}
+
+
+.sidebar {
+  position: fixed;
+  border-radius: 88px;
+    background: black;
+ height: auto;
+  width: 25px;
+  transition: transform 0.3s ease-in-out;
+  transform: translateX(110%);
+  z-index: 1040; /* Ensure it appears above other content */
+}
+
+.sidebar.open {
+  transform: translateX(80%);
+}
+
+.toggle-sidebar-btn {
+  position: fixed;
+  top: 100px;
+  right: 10px;
+  z-index: 1050; /* Ensure it appears above the sidebar */
+}
+
+
+.status-tag {
+  display: inline-block;
+  padding: 0.25em 0.75em;
+  border-radius: 0.25em;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.1); /* Optional: Add a subtle border */
+}
+
+.status-active {
+  background-color: rgba(40, 167, 69, 0.2); /* Light green */
+  color: #28a745;
+}
+
+.status-pending {
+  background-color: rgba(255, 193, 7, 0.2); /* Light yellow */
+  color: #ffc107;
+}
+
+.status-completed {
+  background-color: rgba(0, 123, 255, 0.2); /* Light blue */
+  color: #007bff;
+}
+
+.status-cancelled {
+  background-color: rgba(220, 53, 69, 0.2); /* Light red */
+  color: #dc3545;
+}
+.status-cc{
+  background-color: rgba(32, 7, 255, 0.2); /* Light yellow */
+  color: #6e3dc7;
+}

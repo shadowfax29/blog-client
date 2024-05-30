@@ -1,7 +1,7 @@
 
 // import axios from "../config/axios";
 import { useAuth } from "./context/authcontext";
-import { useNavigate } from 'react-router-dom';
+
 import { Routes, Route } from 'react-router-dom'
 import Navbar from "./components/navbar"
 import Register from "./components/register";
@@ -16,22 +16,27 @@ import CreatePost from "./components/createPost";
 import EditPost from "./components/editPost";
 import Detail from "./components/detail";
 import Footer from "./components/footer";
+import { useNavigate } from 'react-router-dom';
 
 function App() {
 const {user} = useAuth()
- const navigate = useNavigate();
+
+  const navigate = useNavigate();
 
   useEffect(() => {
-    const token = localStorage.getItem('token'); // Adjust this line if you retrieve the token differently
+    const token = localStorage.getItem('token');
+    if (token && !user) {
+      // Ensure the user state is updated based on the token
+      // If necessary, fetch the user data using the token
+    }
     if (token) {
       navigate('/api/users/profile');
     }
-  }, [navigate]);
- return(
+  }, [navigate, user]);
+
+  return (
     <div>
-       {user?<><ProfileNavbar/><Footer/></>:<Navbar/>}
-        
-        
+      {user ? <><ProfileNavbar /><Footer /></> : <><Navbar /><Home /></>}
         <Routes>
             <Route index path="/" element={<Home/>}/>
             <Route path="/api/users/register" element={<Register/>}/>

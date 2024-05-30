@@ -25,13 +25,11 @@ const {user} = useAuth()
 
   useEffect(() => {
     const token = localStorage.getItem('token');
-    if (token && !user) {
-      // Ensure the user state is updated based on the token
-      // If necessary, fetch the user data using the token
-    }
     if (token) {
       navigate('/api/users/profile');
     }
+    else{
+      navigate('/');
   }, [navigate, user]);
 
   return (

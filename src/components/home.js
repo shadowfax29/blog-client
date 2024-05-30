@@ -5,7 +5,7 @@ export default function Home(){
         <div>
             <div class="card ">
   <div class="title">
-    <p class="heading">oWELCOME</p>
+    <p class="heading">WELCOME</p>
     <p class="desc">BLOGWORLD</p>
   </div>
   <div class="wrapper">

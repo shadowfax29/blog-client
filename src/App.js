@@ -50,8 +50,7 @@ const {user} = useAuth()
 
             <Route path="/api/createpost" element={<PrivateRoutes><CreatePost/></PrivateRoutes>}/>
             <Route path="/api/posts/editPost" element={<PrivateRoutes><EditPost/></PrivateRoutes>}/>
-            <Route path="/api/detail" element={<Detail/>}/>
-        </Routes>
+                </Routes>
     </div>
  )
 }

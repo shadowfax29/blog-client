@@ -1,23 +1,31 @@
 import { useLocation } from 'react-router-dom';
 import axios from "../config/axios";
-import { useEffect, useState } from 'react';
+import { useEffect, useState,useReducer } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useAuth } from '../context/authcontext';
 import DOMPurify from "dompurify";
 import DriveFileRenameOutlineTwoToneIcon from '@mui/icons-material/DriveFileRenameOutlineTwoTone';
 import DeleteTwoToneIcon from '@mui/icons-material/DeleteTwoTone';
 import SaveTwoToneIcon from '@mui/icons-material/SaveTwoTone';
+import AllPosts from './AllPosts';
+const initial="false"
+function reducer(state,action){
+    switch(action.type){
+        case 'back':
+            {
+                return (state="true")
+            }
+    }
+}
 
-
-export default function Detail() {
+export default function Detail({id}) {
     const [detail, setDetail] = useState(null);
     const [comment, setComment] = useState('');
     const [editingCommentId, setEditingCommentId] = useState(null);
     const [editingCommentContent, setEditingCommentContent] = useState('');
     const { user } = useAuth();
 
-    const location = useLocation();
-    const { id } = location.state;
+const [state,dispatch]=useReducer(reducer,initial)
 
     useEffect(() => {
         (async () => {
@@ -106,11 +114,15 @@ export default function Detail() {
     if (!detail) {
         return <div className="container mt-5 text-center">Loading...</div>;
     }
-
+if(state==="true"){
+    return(<AllPosts/>)
+}
     return (
         <div className="container mt-5 pb-5" style={{ minHeight: '80vh' }}>
-          
-         
+        <div><button className="btn btn-dark"onClick={()=>{
+dispatch({type:'back'})
+        }}>back</button>
+         </div>
                 <h1 className=" mb-4 status-tag status-pending">DETAIL</h1>
                 {detail.featuredImage && (
                     <div className="mb-4">
